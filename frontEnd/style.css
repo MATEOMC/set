@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+a{
+    color: green;
+    text-decoration: none;
+
+}
+
+.header{
+    background-color: yellow;
+    opacity: 0.8;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: yellow;
+}
+
+.header ul a{
+    display: block;
+    padding: 20px;
+    border-right: 1px solid red;
+}
+
+.header ul a:hover{
+    background-color: #ddd;
+}
+
+.header .logo{
+    float: left;
+    display: block;
+    padding: 10px 20px;
+    width: 7%;
+    height: auto;
+    position: relative;
+    top: 18px;
+    left: 10px;
+
+}
+
+.header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon{
+    
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background: black;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background: black;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon:after{
+    background: black;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+   background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    transform: rotate(45deg);
+    top:0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+@media (min-width: 768px){
+    .header li {
+        float: left;
+
+    }
+
+    .header li a{
+        padding: 20px 30px;
+
+    }
+
+    .header .menu{
+        clear: none;
+        float: right;
+        max-height: none;
+        
+    }
+
+    .header .menu-icon{
+        display: none;
+    }
+
+
+
+}
